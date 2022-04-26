@@ -86,8 +86,8 @@ namespace DOM_RIA
 
             if(to_delete<=Site_Dim_ria.Count-1)
             {
-                this.Archive(Site_Dim_ria[to_delete - 1]);
-                Site_Dim_ria.Remove(Site_Dim_ria[to_delete - 1]);
+                this.Archive(Site_Dim_ria[to_delete]);
+                Site_Dim_ria.Remove(Site_Dim_ria[to_delete]);
                 Console.Clear();
                 Console.WriteLine(" Обьявление успешно удалено и перемещено в архив ");
                 System.Console.ReadLine();
@@ -121,6 +121,10 @@ namespace DOM_RIA
             }
         }
         
+        ~Meneger()
+        {
+            Save_file();
+        }
         
     }
 

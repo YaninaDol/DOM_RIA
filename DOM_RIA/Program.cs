@@ -7,24 +7,23 @@ namespace DOM_RIA
         static void Main(string[] args)
         {
 
-            //Meneger meneger = new Meneger();
-            //meneger.Baza_Show();
-            //Console.WriteLine("num--" + meneger.Site_Dim_ria.Count); 
-            // meneger.Add();
-            // Console.WriteLine(" num---"+ meneger.Site_Dim_ria.Count);
-            // meneger.Baza_Show();
-            // meneger.Save_file();
+            Menu menu = new Menu();
 
+            Console.WriteLine("1 - Вход менеджера\n2 - Вход клиента\nВаш выбор: ");
 
-            Client client = new Client("Login", "Parol", "  Днепр");
-          foreach(var item in client.MyAdvertisings)
+            int chose = int.Parse(System.Console.ReadLine());
+            if(chose==1)
             {
-                Console.WriteLine(item.Flat.Location.City+ "\n");
+                Console.Clear();
+                menu.Meneger_menu();
             }
-
-
-           // client.Baza_Show();
-            client.Search();
+            if(chose==2)
+            {
+                Console.Clear();
+                menu.Client_menu();
+            }
+          
+           
         }
     }
 }
